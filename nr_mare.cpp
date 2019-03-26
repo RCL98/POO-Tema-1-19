@@ -85,6 +85,31 @@ bool nr_mare::operator<(const nr_mare &b)
     }
 }
 
+bool nr_mare::operator<=(const nr_mare &b)
+{
+    if(b.semn && !semn)
+        return false;
+    else if(semn && !b.semn )
+        return true;
+    else
+    {
+            if((*this).max_abs(b)==b && (*this).max_abs(b)==(*this))
+                return true;
+            if((*this).max_abs(b)==b)
+            {
+                if(!b.semn)
+                    return true;
+                else return false;
+            }
+            else
+            {
+                if(b.semn)
+                    return true;
+                return false;
+            }
+    }
+}
+
 std::istream & operator >> (std::istream &in, nr_mare &n)
 {
     std::string sir; int i = 0,c;
@@ -380,4 +405,19 @@ nr_mare nr_mare::gcd(nr_mare b)
     if(nr.stop != NULL && nr.stop->key==0)
         return b;
     else return (b%(*this)).gcd((*this));
+}
+
+void nr_mare::lista_div( )
+{
+    nr_mare a = (*this), div, it, r;
+    it = 1;
+    r = 0;
+
+    for( div = 1; div * div <= a ; div = div + it)
+    {
+        if ( a % div == r)
+        {
+            std::cout << " (" << div << ", " << a/div << ") ";
+        }
+    }
 }

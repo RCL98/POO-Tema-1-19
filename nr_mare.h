@@ -19,6 +19,7 @@ class nr_mare
         nr_mare operator= (const int &);
         bool operator== (const nr_mare &);
         bool operator< (const nr_mare &);
+        bool operator<= (const nr_mare &);
         nr_mare operator+ (nr_mare );
         nr_mare operator- (nr_mare );
         nr_mare operator* (nr_mare );
@@ -26,6 +27,7 @@ class nr_mare
         nr_mare operator% (nr_mare );
         nr_mare gcd (nr_mare );
         nr_mare max_abs (nr_mare );
+        void lista_div( );
         friend std::istream & operator >> (std::istream &, nr_mare &);
         friend std::ostream & operator << (std::ostream &, const nr_mare &);
 
